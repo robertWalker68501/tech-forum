@@ -1,12 +1,10 @@
-import Navbar from '@/components/shared/navigation/Navbar';
+import PageHeader from '@/components/shared/PageHeader';
 
 const PostsPage = () => {
   return (
-    <header className='header'>
-      <div className='container'>
-        <Navbar />
-      </div>
-    </header>
+    <div className='container mt-10'>
+      <PageHeader title='Posts' />
+    </div>
   );
 };
 
