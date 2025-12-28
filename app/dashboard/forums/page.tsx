@@ -27,8 +27,8 @@ const ForumsPage = async () => {
       </PageHeader>
 
       <div className='mt-4 flex flex-col gap-y-4'>
-        {forums.map((forum, index) => (
-          <Card key={index}>
+        {forums.map((forum) => (
+          <Card key={forum.id}>
             <CardHeader>
               <CardTitle>{forum.name}</CardTitle>
               <CardDescription>{forum.description}</CardDescription>
