@@ -26,7 +26,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { InputGroup, InputGroupTextarea } from '@/components/ui/input-group';
 import { createForum } from '@/lib/actions/forum.actions';
-import { createForumFormSchema as schema } from '@/lib/schemas/creatForumFormSchema';
+import { createForumFormSchema as schema } from '@/lib/schemas/createForumFormSchema';
 
 const CreateForumForm = () => {
   const router = useRouter();

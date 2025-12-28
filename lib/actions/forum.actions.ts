@@ -1,12 +1,20 @@
 'use server';
 
+import { auth } from '@clerk/nextjs/server';
 import { revalidatePath } from 'next/cache';
 import * as z from 'zod';
 
 import prisma from '@/lib/prisma';
-import { createForumFormSchema } from '@/lib/schemas/creatForumFormSchema';
+import { createForumFormSchema } from '@/lib/schemas/createForumFormSchema';
 
 export async function createForum(data: z.infer<typeof createForumFormSchema>) {
+  const { userId } = await auth();
+  if (!userId) {
+    return {
+      error: 'You must be logged in to create a forum.',
+    };
+  }
+
   const validatedFields = createForumFormSchema.safeParse(data);
 
   if (!validatedFields.success) {
