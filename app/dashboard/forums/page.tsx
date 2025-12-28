@@ -30,7 +30,9 @@ const ForumsPage = async () => {
         {forums.map((forum) => (
           <Card key={forum.id}>
             <CardHeader>
-              <CardTitle>{forum.name}</CardTitle>
+              <CardTitle>
+                <Link href={`/dashboard/forums/${forum.id}`}>{forum.name}</Link>
+              </CardTitle>
               <CardDescription>{forum.description}</CardDescription>
             </CardHeader>
           </Card>
