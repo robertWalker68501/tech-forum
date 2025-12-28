@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 declare global {
   type SiteLogoProps = {
     href: string;
@@ -23,6 +25,7 @@ declare global {
 
   type PageHeaderProps = {
     title: string;
+    children?: ReactNode;
   };
 }
 

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 
+import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Inter, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
+import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-
-import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -44,6 +44,10 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster
+              position='top-right'
+              richColors
+            />
           </ThemeProvider>
         </body>
       </html>

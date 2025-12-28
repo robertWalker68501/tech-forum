@@ -1,6 +1,6 @@
 'use client';
 
-import { SignOutButton, useUser } from '@clerk/nextjs';
+import { SignOutButton, UserButton, useUser } from '@clerk/nextjs';
 import { ChevronUp, User2 } from 'lucide-react';
 
 import SiteLogo from '@/components/shared/SiteLogo';
@@ -57,37 +57,11 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className='bg-gray-800/30'>
         <SidebarMenu>
-          <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton>
-                  <User2 /> {user?.firstName} {user?.lastName}
-                  <ChevronUp className='ml-auto' />
-                </SidebarMenuButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                side='top'
-                className='w-[--radix-popper-anchor-width]'
-              >
-                <DropdownMenuItem>
-                  <span>Account</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Billing</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <SignOutButton>
-                    <Button
-                      className='ml-1'
-                      variant='link'
-                      size='icon'
-                    >
-                      Logout
-                    </Button>
-                  </SignOutButton>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          <SidebarMenuItem className='flex items-center gap-2'>
+            <UserButton />
+            <span className='text-md'>
+              {user?.firstName} {user?.lastName}
+            </span>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
