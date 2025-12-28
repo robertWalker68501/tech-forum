@@ -1,9 +1,10 @@
 'use client';
 
-import { useUser } from '@clerk/nextjs';
+import { SignOutButton, useUser } from '@clerk/nextjs';
 import { ChevronUp, User2 } from 'lucide-react';
 
 import SiteLogo from '@/components/shared/SiteLogo';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -75,7 +76,15 @@ export function AppSidebar() {
                   <span>Billing</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <span>Sign out</span>
+                  <SignOutButton>
+                    <Button
+                      className='ml-1'
+                      variant='link'
+                      size='icon'
+                    >
+                      Logout
+                    </Button>
+                  </SignOutButton>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
