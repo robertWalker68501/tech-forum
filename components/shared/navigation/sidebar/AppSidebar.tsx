@@ -1,4 +1,7 @@
-import { ChevronDown, ChevronUp, User2 } from 'lucide-react';
+'use client';
+
+import { useUser } from '@clerk/nextjs';
+import { ChevronUp, User2 } from 'lucide-react';
 
 import SiteLogo from '@/components/shared/SiteLogo';
 import {
@@ -22,6 +25,8 @@ import {
 import { DASHBOARD_NAV_LINKS } from '@/constants';
 
 export function AppSidebar() {
+  const { user } = useUser();
+
   return (
     <Sidebar>
       <SidebarHeader className='bg-gray-800/30 pt-4'>
@@ -55,7 +60,7 @@ export function AppSidebar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton>
-                  <User2 /> Username
+                  <User2 /> {user?.firstName} ${user?.lastName}
                   <ChevronUp className='ml-auto' />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>

@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   return (
     <div className='container'>
-      <PageHeader title={`${user.firstName}&apos;s dashboard`} />
+      <PageHeader title={`${user.firstName}'s dashboard`} />
     </div>
   );
 };
