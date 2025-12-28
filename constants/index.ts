@@ -5,6 +5,7 @@ import {
   Search,
   Settings,
   StickyNote,
+  AppWindow,
 } from 'lucide-react';
 
 export const NAV_LINKS = [
@@ -40,24 +41,30 @@ export const DASHBOARD_NAV_LINKS = [
   },
   {
     id: '3',
+    label: 'Forums',
+    href: '/dashboard/forums',
+    icon: AppWindow,
+  },
+  {
+    id: '4',
     label: 'Posts',
     href: '/dashboard/posts',
     icon: StickyNote,
   },
   {
-    id: '4',
+    id: '5',
     label: 'Calendar',
     href: '/dashboard/calendar',
     icon: Calendar,
   },
   {
-    id: '5',
+    id: '6',
     label: 'Search',
     href: '/dashboard/search',
     icon: Search,
   },
   {
-    id: '6',
+    id: '7',
     label: 'Settings',
     href: '/dashboard/settings',
     icon: Settings,
